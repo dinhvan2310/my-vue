@@ -69,8 +69,8 @@ function GameComponent(props: GameComponentProps) {
       }
 
       handleCanvasClick = (event: MouseEvent) => {
-        const x = event.clientX - (canvas?.offsetLeft || 0);
-        const y = event.clientY - (canvas?.offsetTop || 0);
+        const x = event.pageX - (canvas?.offsetLeft || 0);
+        const y = event.pageY - (canvas?.offsetTop || 0);
 
         const index = randomPoints.findIndex(
           ([px, py]) => Math.abs(px - x) < 20 && Math.abs(py - y) < 20
